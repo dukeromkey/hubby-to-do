@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import AddGoal from "./components/AddGoal";
 
 export default function App() {
   return (
@@ -7,16 +8,9 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={styles.container}>
         <Text style={styles.title}>Hubby To Do List</Text>
-        {/* INPUT AREA */}
+        {/* ADD GOAL INPUT */}
         <View style={styles.addGoalContainer}>
-          <View style={styles.goalInput}>
-            <TextInput placeholder="Add Goal" placeholderTextColor="white" />
-            <View style={styles.addGoalButton}>
-              <Pressable>
-                <Text style={styles.buttonText}>Add Goal</Text>
-              </Pressable>
-            </View>
-          </View>
+          <AddGoal />
         </View>
       </View>
     </>
@@ -34,15 +28,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     padding: 16,
   },
-  goalInput: {
-    position: "relative",
-    padding: 10,
-    width: "80%",
-    color: "white",
-    borderWidth: 2,
-    borderColor: "black",
-    borderRadius: 20,
-  },
+
   addGoalContainer: {
     flex: 1,
     flexDirection: "row",
@@ -52,17 +38,6 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     width: "100%",
     backgroundColor: "white",
-    color: "white",
-  },
-  addGoalButton: {
-    position: "absolute",
-    right: -5,
-    top: -10,
-    backgroundColor: "grey",
-    padding: 20,
-    borderRadius: 50,
-  },
-  buttonText: {
     color: "white",
   },
 });
