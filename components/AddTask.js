@@ -1,13 +1,25 @@
+import { useState } from "react";
 import { StyleSheet, View, Text, TextInput, Pressable } from "react-native";
 
-function AddTask() {
+function AddTask({ toggleModal, newTask, newTaskHandler }) {
   return (
-    <View style={styles.taskInput}>
-      <TextInput placeholder="Enter Task" placeholderTextColor="grey" />
-      <View style={styles.addTaskButton}>
-        <Pressable>
-          <Text style={styles.buttonText}>Add Task</Text>
-        </Pressable>
+    <View style={styles.addTaskOuterContainer}>
+      <View style={styles.addTaskInnerContainer}>
+        <TextInput
+          placeholder="Enter Task"
+          placeholderTextColor="grey"
+          value={newTask}
+          onChangeText={newTaskHandler}
+        />
+        <View style={styles.addTaskButton}>
+          <Pressable
+            onPress={() => {
+              toggleModal(true);
+            }}
+          >
+            <Text style={styles.buttonText}>Add Task</Text>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -16,12 +28,18 @@ function AddTask() {
 export default AddTask;
 
 const styles = StyleSheet.create({
-  taskInput: {
+  addTaskOuterContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    width: "80%",
+    paddingVertical: 9,
+    paddingRight: 18,
+  },
+  addTaskInnerContainer: {
     position: "relative",
     padding: 10,
     paddingRight: 35,
-    marginRight: 50,
-    width: "60%",
+    width: "80%",
     color: "white",
     borderWidth: 2,
     borderColor: "black",
@@ -32,10 +50,10 @@ const styles = StyleSheet.create({
     right: -70,
     top: -10,
     backgroundColor: "grey",
-    padding: 20,
     borderRadius: 50,
   },
   buttonText: {
+    padding: 20,
     color: "white",
   },
 });
