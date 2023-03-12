@@ -1,33 +1,35 @@
 import { StyleSheet, View, Text, TextInput, Pressable } from "react-native";
 
-function AddGoal() {
+function AddTask() {
   return (
-    <View style={styles.goalInput}>
-      <TextInput placeholder="Add Goal" placeholderTextColor="white" />
-      <View style={styles.addGoalButton}>
+    <View style={styles.taskInput}>
+      <TextInput placeholder="Enter Task" placeholderTextColor="grey" />
+      <View style={styles.addTaskButton}>
         <Pressable>
-          <Text style={styles.buttonText}>Add Goal</Text>
+          <Text style={styles.buttonText}>Add Task</Text>
         </Pressable>
       </View>
     </View>
   );
 }
 
-export default AddGoal;
+export default AddTask;
 
 const styles = StyleSheet.create({
-  goalInput: {
+  taskInput: {
     position: "relative",
     padding: 10,
-    width: "80%",
+    paddingRight: 35,
+    marginRight: 50,
+    width: "60%",
     color: "white",
     borderWidth: 2,
     borderColor: "black",
     borderRadius: 20,
   },
-  addGoalButton: {
+  addTaskButton: {
     position: "absolute",
-    right: -5,
+    right: -70,
     top: -10,
     backgroundColor: "grey",
     padding: 20,
