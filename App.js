@@ -26,6 +26,7 @@ export default function App() {
       ...prevRegTasks,
       { task: newRegTask, key: randomKey },
     ]);
+    setNewTask("");
   }
 
   function addWifeTaskHandler(newWifeTask) {
@@ -34,6 +35,7 @@ export default function App() {
       ...prevWifeTasks,
       { task: newWifeTask, key: randomKey },
     ]);
+    setNewTask("");
   }
 
   return (
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 60,
-    backgroundColor: "#fff",
+    backgroundColor: "#F5F7FA",
     alignItems: "center",
   },
   title: {

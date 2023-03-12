@@ -19,7 +19,6 @@ export default Task;
 
 const styles = StyleSheet.create({
   taskContainer: {
-    flex: 1,
     margin: 5,
     borderRadius: 10,
     overflow: "hidden",

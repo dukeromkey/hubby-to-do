@@ -25,7 +25,6 @@ export default TaskList;
 
 const styles = StyleSheet.create({
   taskListContainer: {
-    flex: 1,
     padding: 20,
   },
 });

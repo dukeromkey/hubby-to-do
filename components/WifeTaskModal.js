@@ -46,7 +46,7 @@ export default WifeTaskModal;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: "#BED0F7",
+    backgroundColor: "#F5F7FA",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
     gap: 50,
   },
   buttonYes: {
-    backgroundColor: "#51ca58",
+    backgroundColor: "#91E697",
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
   },
   buttonNo: {
-    backgroundColor: "#E12D39",
+    backgroundColor: "#FF9B9B",
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",

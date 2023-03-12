@@ -2,15 +2,19 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 
 function WifeTask({ text, index }) {
   return (
-    <View style={styles.taskContainer}>
-      <Text
-        style={{
-          backgroundColor: index % 2 === 0 ? "#FFBDBD" : "#FFE3E3",
-          padding: 10,
-        }}
-      >
-        {text}
-      </Text>
+    <View
+      style={{
+        backgroundColor: index % 2 === 0 ? "#FF9B9B" : "#FFBDBD",
+        padding: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        margin: 5,
+        borderRadius: 10,
+        overflow: "hidden",
+      }}
+    >
+      <Text style={styles.task}>{text}</Text>
+      <Text style={styles.priority}>High Priority</Text>
     </View>
   );
 }
@@ -18,9 +22,11 @@ function WifeTask({ text, index }) {
 export default WifeTask;
 
 const styles = StyleSheet.create({
-  taskContainer: {
-    flex: 1,
-    margin: 5,
+  priority: {
+    paddingVertical: 3,
+    paddingHorizontal: 5,
+    color: "#AB091E",
+    backgroundColor: "#FFE3E3",
     borderRadius: 10,
     overflow: "hidden",
   },
