@@ -3,29 +3,29 @@ import Icon from "react-native-vector-icons/AntDesign";
 
 function WifeTask({ text, index, id, removeTask }) {
   return (
-    <Pressable
-      onPress={() => {
-        removeTask("wifeTasks", id);
+    <View
+      style={{
+        backgroundColor: index % 2 === 0 ? "#FF9B9B" : "#FFBDBD",
+        padding: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        margin: 5,
+        borderRadius: 10,
+        overflow: "hidden",
       }}
     >
-      <View
-        style={{
-          backgroundColor: index % 2 === 0 ? "#FF9B9B" : "#FFBDBD",
-          padding: 10,
-          flexDirection: "row",
-          justifyContent: "space-between",
-          margin: 5,
-          borderRadius: 10,
-          overflow: "hidden",
-        }}
-      >
-        <View style={styles.task}>
-          <Icon name="closecircle" size="24" color="#F5F7FA" />
-          <Text style={styles.taskText}>{text}</Text>
-        </View>
-        <Text style={styles.priority}>High Priority</Text>
+      <View style={styles.task}>
+        <Pressable
+          onPress={() => {
+            removeTask("wifeTasks", id);
+          }}
+        >
+          <Icon name="closecircle" size="24" color="#FFE3E3" />
+        </Pressable>
+        <Text style={styles.taskText}>{text}</Text>
       </View>
-    </Pressable>
+      <Text style={styles.priority}>High Priority</Text>
+    </View>
   );
 }
 
@@ -37,7 +37,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
   },
-  taskText: {},
+  taskText: {
+    color: "#8A041A",
+  },
   priority: {
     paddingVertical: 3,
     paddingHorizontal: 5,

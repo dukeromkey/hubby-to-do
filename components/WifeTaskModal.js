@@ -21,7 +21,7 @@ function WifeTaskModal({
                   addWifeTaskHandler(newTask, true);
                 }}
               >
-                <Text style={styles.buttonText}>YES</Text>
+                <Text style={styles.buttonTextYes}>YES</Text>
               </Pressable>
             </View>
             <View style={styles.buttonNo}>
@@ -31,7 +31,7 @@ function WifeTaskModal({
                   addRegTaskHandler(newTask, false);
                 }}
               >
-                <Text style={styles.buttonText}>NO</Text>
+                <Text style={styles.buttonTextNo}>NO</Text>
               </Pressable>
             </View>
           </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "#35469C",
+    color: "#4055A8",
     fontSize: 30,
     fontWeight: "500",
   },
@@ -67,20 +67,27 @@ const styles = StyleSheet.create({
     gap: 50,
   },
   buttonYes: {
-    backgroundColor: "#91E697",
+    backgroundColor: "#FFBDBD",
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
   },
   buttonNo: {
-    backgroundColor: "#FF9B9B",
+    backgroundColor: "#BED0F7",
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
   },
-  buttonText: {
+  buttonTextYes: {
     paddingVertical: 20,
     paddingHorizontal: 45,
     fontWeight: "700",
+    color: "#8A041A",
+  },
+  buttonTextNo: {
+    paddingVertical: 20,
+    paddingHorizontal: 45,
+    fontWeight: "700",
+    color: "#2d3a8c",
   },
 });

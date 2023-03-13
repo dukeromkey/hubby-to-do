@@ -6,8 +6,8 @@ function AddTask({ toggleModal, newTask, newTaskHandler }) {
     <View style={styles.addTaskOuterContainer}>
       <View style={styles.addTaskInnerContainer}>
         <TextInput
-          placeholder="Enter Task"
-          placeholderTextColor="grey"
+          placeholder="Enter Task..."
+          placeholderTextColor="#DE911D"
           value={newTask}
           onChangeText={newTaskHandler}
         />
@@ -39,21 +39,21 @@ const styles = StyleSheet.create({
     position: "relative",
     padding: 10,
     paddingRight: 35,
+    backgroundColor: "#FFF",
     width: "80%",
-    color: "white",
     borderWidth: 2,
-    borderColor: "black",
+    borderColor: "#F7C948",
     borderRadius: 20,
   },
   addTaskButton: {
     position: "absolute",
     right: -70,
     top: -10,
-    backgroundColor: "grey",
+    backgroundColor: "#F7C948",
     borderRadius: 50,
   },
   buttonText: {
     padding: 20,
-    color: "white",
+    color: "#B44D12",
   },
 });

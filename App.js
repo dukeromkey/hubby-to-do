@@ -92,22 +92,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontSize: 30,
+    fontSize: 40,
     padding: 16,
-    color: "#35469C",
+    fontWeight: "800",
+    color: "#4055A8",
   },
 
   addTaskContainer: {
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "center",
-    padding: 20,
+    paddingHorizontal: 20,
     paddingTop: 20,
     width: "100%",
   },
   taskListContainer: {
     flex: 5,
     width: "100%",
-    marginTop: 20,
+    marginTop: 0,
   },
 });
