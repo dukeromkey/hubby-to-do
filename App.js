@@ -69,7 +69,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 70,
     backgroundColor: "#F5F7FA",
     alignItems: "center",
   },
@@ -80,16 +80,16 @@ const styles = StyleSheet.create({
   },
 
   addTaskContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "center",
     padding: 20,
-    paddingTop: 30,
+    paddingTop: 20,
     width: "100%",
   },
   taskListContainer: {
     flex: 5,
     width: "100%",
+    marginTop: 20,
   },
 });
