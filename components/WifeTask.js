@@ -1,4 +1,5 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
+import Icon from "react-native-vector-icons/AntDesign";
 
 function WifeTask({ text, index, id, removeTask }) {
   return (
@@ -18,7 +19,10 @@ function WifeTask({ text, index, id, removeTask }) {
           overflow: "hidden",
         }}
       >
-        <Text style={styles.task}>{text}</Text>
+        <View style={styles.task}>
+          <Icon name="closecircle" size="24" color="#F5F7FA" />
+          <Text style={styles.taskText}>{text}</Text>
+        </View>
         <Text style={styles.priority}>High Priority</Text>
       </View>
     </Pressable>
@@ -28,6 +32,12 @@ function WifeTask({ text, index, id, removeTask }) {
 export default WifeTask;
 
 const styles = StyleSheet.create({
+  task: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  taskText: {},
   priority: {
     paddingVertical: 3,
     paddingHorizontal: 5,
