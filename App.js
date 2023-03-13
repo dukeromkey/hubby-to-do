@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
@@ -13,7 +13,6 @@ export default function App() {
   const [newTask, setNewTask] = useState("");
 
   useEffect(() => {
-    console.log("hit use effect");
     const newAllTasks = wifeTasks.concat(regTasks);
     setAllTasks(newAllTasks);
   }, [wifeTasks, regTasks]);
@@ -45,16 +44,11 @@ export default function App() {
   }
 
   function removeTask(list, id) {
-    console.log("Hit remove task");
-    console.log("list", list);
-    console.log("id", id);
     if (list === "regTasks") {
-      console.log("hit remove reg task");
       setRegTasks((prevRegTasks) =>
         prevRegTasks.filter((task) => task.key !== id)
       );
     } else {
-      console.log("hit remove wife task");
       setWifeTasks((prevWifeTasks) =>
         prevWifeTasks.filter((task) => task.key !== id)
       );
