@@ -2,17 +2,31 @@ import { StyleSheet, View, Text, FlatList, Pressable } from "react-native";
 import Task from "./Task";
 import WifeTask from "./WifeTask";
 
-function TaskList({ wifeTasks, regTasks }) {
-  const combinedTasks = wifeTasks.concat(regTasks);
+function TaskList({ allTasks, removeTask }) {
+  console.log("task list ALL TASKS", allTasks);
   return (
     <View style={styles.taskListContainer}>
       <FlatList
-        data={combinedTasks}
+        data={allTasks}
         renderItem={({ item, index }) => {
           if (item.wife) {
-            return <WifeTask text={item.task} index={index} />;
+            return (
+              <WifeTask
+                removeTask={removeTask}
+                text={item.task}
+                index={index}
+                id={item.key}
+              />
+            );
           } else {
-            return <Task text={item.task} index={index} />;
+            return (
+              <Task
+                removeTask={removeTask}
+                text={item.task}
+                index={index}
+                id={item.key}
+              />
+            );
           }
         }}
         alwaysBounceVertical={false}

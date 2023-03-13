@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
@@ -8,8 +8,15 @@ import WifeTaskModal from "./components/WifeTaskModal";
 export default function App() {
   const [wifeTasks, setWifeTasks] = useState([]);
   const [regTasks, setRegTasks] = useState([]);
+  const [allTasks, setAllTasks] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [newTask, setNewTask] = useState("");
+
+  useEffect(() => {
+    console.log("hit use effect");
+    const newAllTasks = wifeTasks.concat(regTasks);
+    setAllTasks(newAllTasks);
+  }, [wifeTasks, regTasks]);
 
   function newTaskHandler(task) {
     setNewTask(task);
@@ -37,6 +44,23 @@ export default function App() {
     setNewTask("");
   }
 
+  function removeTask(list, id) {
+    console.log("Hit remove task");
+    console.log("list", list);
+    console.log("id", id);
+    if (list === "regTasks") {
+      console.log("hit remove reg task");
+      setRegTasks((prevRegTasks) =>
+        prevRegTasks.filter((task) => task.key !== id)
+      );
+    } else {
+      console.log("hit remove wife task");
+      setWifeTasks((prevWifeTasks) =>
+        prevWifeTasks.filter((task) => task.key !== id)
+      );
+    }
+  }
+
   return (
     <>
       <StatusBar style="auto" />
@@ -52,7 +76,7 @@ export default function App() {
         </View>
         {/* TASK LIST DISPLAY */}
         <View style={styles.taskListContainer}>
-          <TaskList wifeTasks={wifeTasks} regTasks={regTasks} />
+          <TaskList removeTask={removeTask} allTasks={allTasks} />
         </View>
         <WifeTaskModal
           isVisible={modalVisible}

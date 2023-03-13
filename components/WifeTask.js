@@ -1,21 +1,27 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 
-function WifeTask({ text, index }) {
+function WifeTask({ text, index, id, removeTask }) {
   return (
-    <View
-      style={{
-        backgroundColor: index % 2 === 0 ? "#FF9B9B" : "#FFBDBD",
-        padding: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        margin: 5,
-        borderRadius: 10,
-        overflow: "hidden",
+    <Pressable
+      onPress={() => {
+        removeTask("wifeTasks", id);
       }}
     >
-      <Text style={styles.task}>{text}</Text>
-      <Text style={styles.priority}>High Priority</Text>
-    </View>
+      <View
+        style={{
+          backgroundColor: index % 2 === 0 ? "#FF9B9B" : "#FFBDBD",
+          padding: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          margin: 5,
+          borderRadius: 10,
+          overflow: "hidden",
+        }}
+      >
+        <Text style={styles.task}>{text}</Text>
+        <Text style={styles.priority}>High Priority</Text>
+      </View>
+    </Pressable>
   );
 }
 
