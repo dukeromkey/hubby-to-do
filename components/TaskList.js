@@ -3,7 +3,6 @@ import Task from "./Task";
 import WifeTask from "./WifeTask";
 
 function TaskList({ allTasks, removeTask }) {
-  console.log("task list ALL TASKS", allTasks);
   return (
     <View style={styles.taskListContainer}>
       <FlatList
