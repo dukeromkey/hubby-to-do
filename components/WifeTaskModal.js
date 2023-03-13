@@ -18,7 +18,7 @@ function WifeTaskModal({
               <Pressable
                 onPress={() => {
                   toggleModal(false);
-                  addWifeTaskHandler(newTask);
+                  addWifeTaskHandler(newTask, true);
                 }}
               >
                 <Text style={styles.buttonText}>YES</Text>
@@ -28,7 +28,7 @@ function WifeTaskModal({
               <Pressable
                 onPress={() => {
                   toggleModal(false);
-                  addRegTaskHandler(newTask);
+                  addRegTaskHandler(newTask, false);
                 }}
               >
                 <Text style={styles.buttonText}>NO</Text>

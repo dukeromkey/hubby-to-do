@@ -16,24 +16,23 @@ export default function App() {
   }
 
   function toggleModal(visible) {
-    console.log(visible);
     setModalVisible(visible);
   }
 
-  function addRegTaskHandler(newRegTask) {
+  function addRegTaskHandler(newRegTask, isWife) {
     const randomKey = Math.random().toString() + newRegTask;
     setRegTasks((prevRegTasks) => [
       ...prevRegTasks,
-      { task: newRegTask, key: randomKey },
+      { task: newRegTask, key: randomKey, wife: isWife },
     ]);
     setNewTask("");
   }
 
-  function addWifeTaskHandler(newWifeTask) {
+  function addWifeTaskHandler(newWifeTask, isWife) {
     const randomKey = Math.random().toString() + newWifeTask;
     setWifeTasks((prevWifeTasks) => [
       ...prevWifeTasks,
-      { task: newWifeTask, key: randomKey },
+      { task: newWifeTask, key: randomKey, wife: isWife },
     ]);
     setNewTask("");
   }
