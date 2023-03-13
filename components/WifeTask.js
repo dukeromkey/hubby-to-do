@@ -20,7 +20,7 @@ function WifeTask({ text, index, id, removeTask }) {
             removeTask("wifeTasks", id);
           }}
         >
-          <Icon name="closecircle" size="24" color="#FFE3E3" />
+          <Icon name="closecircle" size={24} color="#FFE3E3" />
         </Pressable>
         <Text style={styles.taskText}>{text}</Text>
       </View>
