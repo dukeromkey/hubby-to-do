@@ -10,6 +10,7 @@ function AddTask({ toggleModal, newTask, newTaskHandler }) {
           placeholderTextColor="#DE911D"
           value={newTask}
           onChangeText={newTaskHandler}
+          style={{ color: "#DE911D" }}
         />
         <View style={styles.addTaskButton}>
           <Pressable
