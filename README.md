@@ -1,11 +1,11 @@
-# Hubby To Do
+# Hubby To Do List
 
 <div align="center">
   <img src="PeculiarPandasSmall.gif" width="500" /></br>
 </div>
 
 ## Technologies
-
+- React Native
 
 ## Features
 
